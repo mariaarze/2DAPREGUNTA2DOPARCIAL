@@ -1,28 +1,43 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+struct cadena
+{ 
+  char cad[50];
+};
+struct vectorcad
+{
+ cadena v[50];
+ };
+ void cargar_matrizveccad (cadena vec[50], vectorcad mat[50][50], int n)
+ {
+  int len;
+  int ini,fin;
+  int cont1,cont2;
+  int i,j,k;
+  char  aux[50];
+  for (i=0;i<n;i++)
+  {
+     len=strlen(vec[i].cad);
+     len=len/n;
+     ini=0;
+     for (j=0;j<n;j++)
+     {
+       fin=ini+len;
+       cont1=0;
+       for (cont2=ini;cont2<fin;cont2++)
+       {
+          aux[cont1]=vec[i].cad[cont2];
+          cont1++;
+          }
+          ini=fin+1;
+          for (k=0;k<n;k++)
+          {
+             strcpy(mat[i][j].v[k].cad,aux);
+             }
+            }
+           }
+         }
+       
+       
+       
+       
+       
+       
